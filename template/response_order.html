@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+
+<head>
+  {% load static %}
+<style>
+
+
+
+/*----------------------------
+  The Navigation Menu
+-----------------------------*/
+
+
+
+
+
+#colorNav li ul{
+  position:absolute;
+  list-style:none;
+  text-align:center;
+  width:200px;
+  right:15%;
+  margin-left:-90px;
+  top:40px;
+  font-family: 'Poppins', sans-serif;
+
+  /* This is important for the show/hide CSS animation */
+  max-height:0px;
+  overflow:hidden;
+
+  -webkit-transition:max-height 0.4s linear;
+  -moz-transition:max-height 0.4s linear;
+  transition:max-height 0.4s linear;
+}
+
+#colorNav li ul li{
+  background-color:#313131;
+}
+
+#colorNav li ul li a{
+  padding:12px;
+  color:#fff !important;
+  text-decoration:none !important;
+  display:block;
+}
+
+#colorNav li ul li:nth-child(odd){ /* zebra stripes */
+  background-color:#363636;
+}
+
+#colorNav li ul li:hover{
+  background-color:#0fcfdc;
+}
+
+#colorNav li ul li:first-child{
+  border-radius:3px 3px 0 0;
+  margin-top:25px;
+  position:relative;
+}
+
+#colorNav li ul li:first-child:before{ /* the pointer tip */
+  content:'';
+  position:absolute;
+  width:1px;
+  height:1px;
+  border:5px solid transparent;
+  border-bottom-color:#313131;
+  left:100%;
+  top:-10px;
+  margin-left:-5px;
+}
+
+#colorNav li ul li:last-child{
+  border-bottom-left-radius:3px;
+  border-bottom-right-radius:3px;
+}
+
+/* This will trigger the CSS */
+/* transition animation on hover */
+
+#colorNav li:hover ul{
+  max-height:310px; /* Increase when adding more dropdown items */
+}
+</style>
+  <!-- Basic -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Site Metas -->
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+
+  <title>Flash</title>
+
+
+  <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}" />
+
+  <!-- fonts style -->
+  <link href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="{% static 'css/style.css' %}" rel="stylesheet" />
+  <!-- responsive style -->
+  <link href="{% static 'css/responsive.css' %}" rel="stylesheet" />
+</head>
+
+<body class="sub_page">
+
+  <div class="hero_area">
+    <!-- header section strats -->
+    <header class="header_section">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-lg-11 offset-lg-1">
+            <nav class="navbar navbar-expand-lg custom_nav-container ">
+              <a class="navbar-brand" href="admin_index.html">
+                <img src="{% static 'images/logo.png' %}" alt="">
+                <span>
+                  Flash
+                </span>
+              </a>
+              </a>
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+
+                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <div class="d-flex ml-auto flex-column flex-lg-row align-items-center">
+                  <ul class="navbar-nav  ">
+
+                    <li class="nav-item actiive">
+                      <a class="nav-link" href="user_index/{{user.id}}">Details <span class="sr-only">(current)</span></a>
+                    </li>
+<!--                    <li class="nav-item">-->
+<!--                      <a class="nav-link" href="/about">About</a>-->
+<!--                    </li>-->
+                    <li class="nav-item ">
+                      <a class="nav-link" href="/user_booking">Booking</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="/user_frames">Frames</a>
+                    </li>
+
+                     <li class="nav-item">
+                      <a class="nav-link" href="/user_appoinment">Appoinment</a>
+                    </li>
+                     <li class="nav-item">
+                      <a class="nav-link" href="/user_design">Design</a>
+                    </li>
+                     <nav id="colorNav">
+
+                        <li class="nav-item active">
+                            <a href="#" class="nav-link">Response</a>
+                            <ul>
+                                <li class="nav-item"><a href="/response_booking">Booking</a></li>
+                                 <li class="nav-item"><a href="/feedback">Feedback</a></li>
+                                <li class="nav-item"><a href="/cart">Cart</a></li>
+                              <li class="nav-item"><a href="/response_order">Order</a></li>
+                                <li class="nav-item"><a href="/response_appoinment">Appoinment</a></li>
+                              <li class="nav-item"><a href="/response_design">Design</a></li>
+
+                            </ul>
+                        </li>
+
+                   </nav>
+<!--                   <li>-->
+<!--					<a href="cart" style='font-size:24px' class='fab'>&#xf642;</a>-->
+<!--				    </li>-->
+
+                    <li class="nav-item">
+                      <a class="nav-link" href="logout">Logout</a>
+                    </li>
+                  </ul>
+
+                </div>
+
+              </div>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- end header section -->
+  </div>
+
+  <!-- about section -->
+
+  <section class="contact_section layout_padding">
+    <div class="bg-img1">
+      <img src="{% static 'images/bg-img-1.png' %}" alt="">
+    </div>
+    <div class="bg-img2">
+      <img src="{% static 'images/bg-img-2.png' %}" alt="">
+    </div>
+    <div class="container">
+      <div class="heading_container">
+        <h2>
+          Response-Order
+        </h2>
+      </div>
+      <div class="">
+        <div class="">
+
+            <form action="" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+              <div class="contact_form-container">
+                <div>
+                 <table class="table" border="2" style="text-align:center;">
+                   <tr>
+                     <th>Name</th>
+<!--                     <th>Phone no</th>-->
+                       <th>Email</th>
+                       <th>Frame Name</th>
+                     <th>Uploaded Photos</th>
+                    <th>Amount</th>
+<!--                     <th>Response</th>-->
+                     <th>Message</th>
+                     <th>Payment</th>
+<!--                     <th>status</th>-->
+                     <th>Payment Status</th>
+
+                   </tr>
+                   {% for i in data %}
+                         <tr>
+                           <td>{{i.user}}</td>
+<!--                           <td>{{i.phone}}</td>-->
+                            <td>{{i.email}}</td>
+                             <td>{{i.frame_name.frame_name}}</td>
+                           <td><img src="{{i.img.url}}" style="height:150px;width:250px;border:2px solid brown"></td>
+                           <td style="color:red;"><b><i>{{i.frame_name.price}}</b></i></td>
+
+
+                             <td style="color:red;"><b><i>{{i.message}}</b></i></td>
+
+
+
+                           {% if i.status == "Accept" and i.payment_status == "not paid" %}
+                           <td><a href="payment_order/{{i.id}}/{{i.frame_name.price}}" class="btn btn-warning">Click here To Pay </a></td>
+                           {% else %}
+                           <td><a href="" class="btn btn-warning"> Payment Blocked </a></td>
+                           {% endif %}
+
+
+
+
+
+<!--                           <td><a href="payment_order/{{i.id}}/{{i.frame_name.price}}" class="btn btn-warning">Pay</a></td>-->
+                            <td style="color:red;"><b><i>{{i.payment_status}}</b></i></td>
+
+<!--                                            <form action="/success" method="POST">-->
+<!--                    <script-->
+<!--                        src="https://checkout.razorpay.com/v1/checkout.js"-->
+<!--                        data-key="rzp_test_SROSnyInFv81S4"-->
+<!--                        data-amount=500-->
+<!--                        data-currency="INR"-->
+<!--                        data-order_id="{{payment.id}}"-->
+<!--                        data-buttontext="Payment"-->
+<!--                        data-name="django payment"-->
+<!--                        data-description="this is test payment"-->
+<!--                        data-image="https://example.com/your_logo.jpg"-->
+<!--                        data-prefill.name="Gaurav Kumar"-->
+<!--                        data-prefill.email="django@test.com"-->
+<!--                        data-theme.color="#F37254"-->
+<!--                    ></script>-->
+<!--                    <input type="hidden" custom="Hidden Element" name="hidden">-->
+<!--                    </form>-->
+
+
+
+
+
+<!--                              <td style="color:red;"><b><i></b></i></td>-->
+                         </tr>
+
+                   {% endfor %}
+
+                 </table>
+
+
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+  </section>
+
+
+
+  <!-- end about section -->
+
+
+  <!-- info section -->
+  <section class="info_section ">
+    <div class="container">
+      <div class="info_container">
+        <div class="info_social">
+          <div class="d-flex justify-content-center">
+            <h4 class="">
+              Follow on
+            </h4>
+          </div>
+          <div class="social_box">
+            <a href="">
+              <img src="{% static 'images/fb.png' %}" alt="">
+            </a>
+            <a href="">
+              <img src="{% static 'images/twitter.png' %}" alt="">
+            </a>
+            <a href="">
+              <img src="{% static 'images/instagram.png' %}" alt="">
+            </a>
+            <a href="">
+              <img src="{% static 'images/linkedin.png' %}" alt="">
+            </a>
+            <a href="">
+              <img src="{% static 'images/dribble.png' %}" alt="">
+            </a>
+            <a href="">
+              <img src="{% static 'images/pinterest.png' %}" alt="">
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- end info_section -->
+
+  <!-- footer section -->
+  <section class="container-fluid footer_section">
+    <div class="container">
+      <p>
+        &copy; 2019 All Rights Reserved By
+        <a href="https://html.design/">Free Html Templates</a>
+      </p>
+    </div>
+  </section>
+  <!-- footer section -->
+
+  <script type="text/javascript" src="{% static 'js/jquery-3.4.1.min.js' %}"></script>
+  <script type="text/javascript" src="{% static 'js/bootstrap.js' %}"></script>
+
+</body>
+
+</html>

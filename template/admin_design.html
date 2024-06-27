@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+
+<head>
+  {% load static %}
+
+<style>
+
+
+
+/*----------------------------
+  The Navigation Menu
+-----------------------------*/
+
+
+
+
+
+#colorNav li ul{
+  position:absolute;
+  list-style:none;
+  text-align:center;
+  width:200px;
+  left:50%;
+  margin-left:-90px;
+  top:40px;
+  font-family: 'Poppins', sans-serif;
+
+  /* This is important for the show/hide CSS animation */
+  max-height:0px;
+  overflow:hidden;
+
+  -webkit-transition:max-height 0.4s linear;
+  -moz-transition:max-height 0.4s linear;
+  transition:max-height 0.4s linear;
+}
+
+#colorNav li ul li{
+  background-color:#313131;
+}
+
+#colorNav li ul li a{
+  padding:12px;
+  color:#fff !important;
+  text-decoration:none !important;
+  display:block;
+}
+
+#colorNav li ul li:nth-child(odd){ /* zebra stripes */
+  background-color:#363636;
+}
+
+#colorNav li ul li:hover{
+  background-color:#0fcfdc;
+}
+
+#colorNav li ul li:first-child{
+  border-radius:3px 3px 0 0;
+  margin-top:25px;
+  position:relative;
+}
+
+#colorNav li ul li:first-child:before{ /* the pointer tip */
+  content:'';
+  position:absolute;
+  width:1px;
+  height:1px;
+  border:5px solid transparent;
+  border-bottom-color:#313131;
+  left:50%;
+  top:-10px;
+  margin-left:-5px;
+}
+
+#colorNav li ul li:last-child{
+  border-bottom-left-radius:3px;
+  border-bottom-right-radius:3px;
+}
+
+/* This will trigger the CSS */
+/* transition animation on hover */
+
+#colorNav li:hover ul{
+  max-height:200px; /* Increase when adding more dropdown items */
+}
+
+
+
+
+
+
+/*----------------------------
+  The Navigation Menu
+-----------------------------*/
+
+
+
+
+
+#message li ul{
+  position:absolute;
+  list-style:none;
+  text-align:center;
+  width:200px;
+  right:10%;
+  margin-left:-90px;
+  top:40px;
+  font-family: 'Poppins', sans-serif;
+
+  /* This is important for the show/hide CSS animation */
+  max-height:0px;
+  overflow:hidden;
+
+  -webkit-transition:max-height 0.4s linear;
+  -moz-transition:max-height 0.4s linear;
+  transition:max-height 0.4s linear;
+}
+
+#message li ul li{
+  background-color:#313131;
+}
+
+#message li ul li a{
+ padding:12px;
+  color:#fff !important;
+  text-decoration:none !important;
+  display:block;
+}
+
+#message li ul li:nth-child(odd){ /* zebra stripes */
+  background-color:#363636;
+}
+
+#message li ul li:hover{
+  background-color:#0fcfdc;
+}
+
+#message li ul li:first-child{
+  border-radius:3px 3px 0 0;
+  margin-top:25px;
+  position:relative;
+}
+#message li ul li:first-child:before{ /* the pointer tip */
+  content:'';
+  position:absolute;
+  width:1px;
+  height:1px;
+  border:5px solid transparent;
+  border-bottom-color:#313131;
+  left:100%;
+  top:-10px;
+  margin-left:-5px;
+}
+
+#message li ul li:last-child{
+  border-bottom-left-radius:3px;
+  border-bottom-right-radius:3px;
+}
+
+/* This will trigger the CSS */
+/* transition animation on hover */
+
+#message li:hover ul{
+  max-height:130px; /* Increase when adding more dropdown items */
+}
+</style>
+
+  <!-- Basic -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Site Metas -->
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+
+  <title>Flash</title>
+
+
+  <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}" />
+
+  <!-- fonts style -->
+  <link href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="{% static 'css/style.css' %}" rel="stylesheet" />
+  <!-- responsive style -->
+  <link href="{% static 'css/responsive.css' %}" rel="stylesheet" />
+</head>
+
+<body class="sub_page">
+
+  <div class="hero_area">
+    <!-- header section strats -->
+    <header class="header_section">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-lg-11 offset-lg-1">
+            <nav class="navbar navbar-expand-lg custom_nav-container ">
+              <a class="navbar-brand" href="admin_index.html">
+                <img src="{% static 'images/logo.png' %}" alt="">
+                <span>
+                 Flash
+                </span>
+              </a>
+              </a>
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <div class="d-flex ml-auto flex-column flex-lg-row align-items-center">
+                  <ul class="navbar-nav  ">
+                    <li class="nav-item">
+                      <a class="nav-link" href="/admin_index">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                   <li class="nav-item">
+                      <a class="nav-link" href="/admin_view_user">View User</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="/admin_booking">Booking</a>
+                    </li>
+
+
+
+                     <li class="nav-item">
+                      <a class="nav-link" href="/admin_appoinment">Appoinment</a>
+                    </li>
+                       <nav id="colorNav">
+
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">Frames</a>
+                            <ul>
+                                 <li class="nav-item"><a href="/admin_addframe">Add Frames</a></li>
+                                <li class="nav-item"><a href="/admin_displayframes">Display Frames</a></li>
+                                <li class="nav-item"><a href="/admin_order">Order</a></li>
+                            </ul>
+                        </li>
+
+                   </nav>
+                     <li class="nav-item active">
+                      <a class="nav-link" href="/admin_design">Design</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="admin_gallery">Gallery</a>
+                    </li>
+                     <nav id="message">
+
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">Message</a>
+                            <ul>
+                                 <li class="nav-item active"><a href="admin_contact">Contact</a></li>
+                                <li class="nav-item"><a href="admin_feedback">Feedback</a></li>
+
+                            </ul>
+                        </li>
+
+                   </nav>
+                    <li class="nav-item">
+                      <a class="nav-link" href="/logout">Logout</a>
+                    </li>
+                  </ul>
+
+                </div>
+
+              </div>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- end header section -->
+  </div>
+
+  <!-- about section -->
+
+  <section class="contact_section layout_padding">
+    <div class="bg-img1">
+      <img src="{% static 'images/bg-img-1.png' %}" alt="">
+    </div>
+    <div class="bg-img2">
+      <img src="{% static 'images/bg-img-2.png' %}" alt="">
+    </div>
+    <div class="container">
+      <div class="heading_container">
+        <h2>
+          Design Request
+        </h2>
+      </div>
+      <div class="">
+        <div class="">
+          <form action="" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+              <div class="contact_form-container">
+                <div>
+                 <table class="table" border="2" style="text-align:center;">
+                   <tr>
+                     <th>Name</th>
+<!--                     <th>Phone no</th>-->
+                     <th>Email</th>
+                     <th>Upload your Photo</th>
+                     <th>Upload model photo</th>
+                     <th>Explanation</th>
+
+                     <th>Status</th>
+                     <th>Amount</th>
+                     <th>Response</th>
+                     <th>Message</th>
+                       <th>Payment Status</th>
+
+                   </tr>
+                 {% for i in data %}
+                         <tr>
+                           <td>{{i.name}}</td>
+<!--                           <td>{{i.phone}}</td>-->
+                           <td>{{i.email}}</td>
+                           <td><img src="{{i.your.url}}" style="height:100px;width:150px;border:2px solid brown"></td>
+                           <td><img src="{{i.model.url}}" style="height:100px;width:150px;border:2px solid brown"></td>
+                           <td>{{i.explain}}</td>
+
+                              {% if i.payment_status == "not paid" %}
+                                 <td><a href="admin_designstatus/{{i.id}}" class="btn btn-success">Status</a></td>
+                                {% else %}
+                                <td><a href="" class="btn btn-warning">Block</a></td>
+                                {% endif %}
+
+
+
+<!--                           <td><a href="" class="btn btn-success">Status</a></td>-->
+                            <td style="color:red;"><b><i>{{i.amount}}</b></i></td>
+                             <td style="color:red;"><b><i>{{i.status}}</b></i></td>
+                             <td style="color:red;"><b><i>{{i.message}}</b></i></td>
+                             <td style="color:blue;"><b><i>{{i.payment_status}}</b></i></td>
+
+                   {% endfor %}
+                   </tr>
+                 </table>
+
+
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+  </section>
+
+
+
+
+  <!-- end about section -->
+
+
+  <!-- info section -->
+  <section class="info_section ">
+    <div class="container">
+      <div class="info_container">
+        <div class="info_social">
+          <div class="d-flex justify-content-center">
+            <h4 class="">
+              Follow on
+            </h4>
+          </div>
+          <div class="social_box">
+            <a href="">
+              <img src="{% static 'images/fb.png' %}" alt="">
+            </a>
+            <a href="">
+              <img src="{% static 'images/twitter.png' %}" alt="">
+            </a>
+            <a href="">
+              <img src="{% static 'images/instagram.png' %}" alt="">
+            </a>
+            <a href="">
+              <img src="{% static 'images/linkedin.png' %}" alt="">
+            </a>
+            <a href="">
+              <img src="{% static 'images/dribble.png' %}" alt="">
+            </a>
+            <a href="">
+              <img src="{% static 'images/pinterest.png' %}" alt="">
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- end info_section -->
+
+  <!-- footer section -->
+  <section class="container-fluid footer_section">
+    <div class="container">
+      <p>
+        &copy; 2019 All Rights Reserved By
+        <a href="https://html.design/">Free Html Templates</a>
+      </p>
+    </div>
+  </section>
+  <!-- footer section -->
+
+  <script type="text/javascript" src="{% static 'js/jquery-3.4.1.min.js' %}"></script>
+  <script type="text/javascript" src="{% static 'js/bootstrap.js' %}"></script>
+
+</body>
+
+</html>
